@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BooksRequest;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Http\Resources\BooksResource;
+use Faker\Factory;
+use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
@@ -13,7 +17,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        return BooksResource::collection(Book::all());
     }
 
     /**
@@ -27,17 +31,23 @@ class BooksController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(Request $request)
     {
-        //
+        $faker = Factory::create(1);
+        $book = Book::create([
+            'name' => $faker->name,
+            'description' => $faker->sentence,
+            'publication_year' => $faker->year
+        ]);
+        return new BooksResource($book);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(BooksRequest $book)
     {
-        //
+        return new BooksResource($book);
     }
 
     /**
