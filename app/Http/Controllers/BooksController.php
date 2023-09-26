@@ -61,9 +61,14 @@ class BooksController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(BooksRequest $request, Book $book)
     {
-        //
+        $book->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'publication_year' => $request->input('publication_year')
+         ]);
+         return new BooksResource($book);
     }
 
     /**
@@ -71,6 +76,7 @@ class BooksController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return response(null, 204);
     }
 }
