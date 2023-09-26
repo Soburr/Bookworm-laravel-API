@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateAuthorRequest;
 use App\Http\Resources\AuthorsResource;
 use Faker\Factory;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\AuthorsRequest;
 class AuthorsController extends Controller
 {
     /**
@@ -42,7 +42,7 @@ class AuthorsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Author $author)
+    public function show(AuthorsRequest $author)
     {
         return new AuthorsResource($author);
         // return response()->json([
@@ -69,7 +69,7 @@ class AuthorsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Author $author)
+    public function update(AuthorsRequest $request, Author $author)
     {
         $author->update([
            'name' => $request->input('name')
