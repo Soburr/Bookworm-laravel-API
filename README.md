@@ -1,4 +1,7 @@
-## BOOKWORM LARAVEL API
+## Bookworm Laravel API
+
+## General Information
+A simple Bookstore API built and tested with [Postman](https://postman.com) 
 
 ## Technologies Used
 - LARAVEL PASSPORT
@@ -7,17 +10,20 @@
 
 ## Set Up
 
-Some basic Git commands are:
 ```
 git clone https://github.com/Soburr/Bookworm-Laravel-APi.git 
 composer install
 php artisan migrate
 
+```
 Then
 
+```
 npm install
 npm run dev
+```
+Run the server
 
-Run the serve
+```
 php artisan serve
 ```
