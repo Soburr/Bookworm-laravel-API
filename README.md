@@ -1,9 +1,9 @@
 ## BOOKWORM LARAVEL API
 
 ## Technologies Used
-. PHP V 8.1
-. LARAVEL V 10.2.5
 - LARAVEL PASSPORT
+- LARAVEL V 10.2.5
+- PHP V 8.1
 
 ## Set Up
 git clone https://github.com/Soburr/Bookworm-Laravel-APi.git 
