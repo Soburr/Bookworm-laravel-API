@@ -14,3 +14,9 @@ npm install
 npm run dev
 Run the serve
 php artisan serve
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
